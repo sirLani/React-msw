@@ -19,6 +19,8 @@ export const Container = styled.div`
   margin-top: 30px;
   margin-bottom: 60px;
 
+   /* make it mobile responsive */
+
   @media (max-width: 930px) {
     box-shadow: none;
     margin-top: 15px;

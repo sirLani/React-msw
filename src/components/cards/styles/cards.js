@@ -49,6 +49,7 @@ export const Description = styled.p`
   margin-bottom: 35px;
 `;
 
+
 // i made this container reusable by not giving it a hard coded flex-direction, margin and item alignment
 
 export const Group = styled.div`
