@@ -6,15 +6,20 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "fuse.js": "^6.4.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-elastic-carousel": "^0.11.5",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "styled-components": "^5.3.3",
+    "swr": "^1.0.1",
+    "web-vitals": "^1.0.1",
+    "whatwg-fetch": "^3.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,5 +39,32 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/seed.jd",
+      "!<rootDir>/src/global-styles.js",
+      "!<rootDir>/src/components/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  },
+  "devDependencies": {
+    "msw": "^0.35.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
