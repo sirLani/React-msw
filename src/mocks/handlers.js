@@ -69,7 +69,7 @@ const wines = [
     name: "Glenfiddich",
     description:
       "Lorem ipsum dolor sit amet consectetur adipiscing elit lacus blandit taciti, penatibus augue nisl tellus praesent pharetra libero condimentum vitae.",
-    image: "/public/images/wine_10.jpg",
+    image: "/images/wine_10.jpg",
   },
   {
     id: 11,

@@ -53,4 +53,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 I had a bit of a challenge deciding on how to get the data to display on the screen, I was contemplating on if i should just hard code the products into it or using it has a JSON file,
 because i was considering reusability,best practice at the same time considering a usecase where one would want to work on the front end part of the project and the APIs are not readily available, then in this scenerio, would i have to delay the project pending the time the APIs are ready? so I decided to Mock the API using MSW and make it look like a live API, where i have to actually do a fetch to get my data, in this case if a live API comes in, all I have to just change is a few lines of code and the project is good to go
-

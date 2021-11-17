@@ -6,8 +6,8 @@ import { ProductContext } from "../context/context";
 export function CategoriesContainer() {
   const { data, error } = useContext(ProductContext);
 
-  if (error) return <span>error</span>;
-  if (!data) return <span>loading...</span>;
+  if (error) return <div style={{display: 'flex', alignItems:'center', width: '100%', justifyContent: 'center', marginBottom: '5rem'}}><span>error</span></div>;
+  if (!data) return <div style={{display: 'flex', alignItems:'center', width: '100%', justifyContent: 'center', marginBottom: '5rem'}}><span>loading...</span></div>;
 
   return (
     <Card.Group flexDirection="row">
