@@ -87,7 +87,8 @@ const wines = [
   },
 ];
 
-// I created a mock server, which would act as a regular rest api, which returns the data needed to be used to populate the screen
+// I created a mock server, which would act as a regular rest api, which 
+//returns the data needed to be used to populate the screen which is similar to the way its done in express frame work
 export const handlers = [
   rest.get("/wines", (req, res, ctx) => {
     return res(
@@ -95,6 +96,7 @@ export const handlers = [
       ctx.delay(500),
       ctx.json(
         Object.entries(wines).map(([status, data]) => {
+          console.log(status);
           return { status, ...data };
         })
       )

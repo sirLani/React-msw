@@ -1,18 +1,38 @@
-# Getting Started with Create React App
+# How to run the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Clone the Project
+2. Run `yarn install`
+3. Run `yarn start`
 
-## Available Scripts
+## Project stack
 
-In the project directory, you can run:
+React, Jest, React-testing-library, Styled Components, MSW(mock service worker)
 
-### `yarn start`
+Jest & React-testing-library will be used for writing unit and integration test hence making sure use-cases works as they should.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+MSW was used to simulate a rest APi.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Scaffold
+
+The Project was bootstrap using create-react-app scaffold by running the command below:
+
+`npx create-react-app my-app`
+
+Create React App is an officially supported way to create single-page React applications. It offers a modern build setup with no configuration.
+
+Even though certain concerns can be raised such as unused libraries like sass etc, it is still a great way to start the application, and we can eject later to manage dependencies ourselves.
+
+The reason for bootstrapping with create-react-app are listed below :
+
+1. Create React App takes care of handling under the hood things, updating things like webpack and babel will be taken care by them. We don't need to hassle with it again.
+
+2. Support for most of the latest JavaScript standards and JSX using pre-configured babel configuration.
+
+3. It gives us the ability to handle offline-mode out of the box. We get manifest.json and Service Worker files out of the box. (used for our caching / offline mode strategy).
+
+4. It also comes with all the testing tools needed out of the box (Jest, react-testing-library), hence, it gives me (the developer) the tools needed just to focus on my code.
+
+5. Support for code splitting via dynamic import() out of the box. This works great with React.lazy and Suspense (Used for optimizing our application).
 
 ### `yarn test`
 
@@ -29,42 +49,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Challenges
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I had a bit of a challenge deciding on how to get the data to display on the screen, I was contemplating on if i should just hard code the products into it or using it has a JSON file,
+because i was considering reusability,best practice at the same time considering a usecase where one would want to work on the front end part of the project and the APIs are not readily available, then in this scenerio, would i have to delay the project pending the time the APIs are ready? so I decided to Mock the API using MSW and make it look like a live API, where i have to actually do a fetch to get my data, in this case if a live API comes in, all I have to just change is a few lines of code and the project is good to go
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

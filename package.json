@@ -65,6 +65,6 @@
     "msw": "^0.35.0"
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": "build"
   }
 }
