@@ -49,15 +49,15 @@ export const Description = styled.p`
   margin-bottom: 35px;
 `;
 
-
 // i made this container reusable by not giving it a hard coded flex-direction, margin and item alignment
 
 export const Group = styled.div`
   display: flex;
   flex-direction: ${({ flexDirection }) =>
     flexDirection === "row" ? "row" : "column"};
-  ${({ alignItems }) => alignItems && `align-items: ${alignItems}`};
-  ${({ margin }) => margin && `margin: ${margin}`};
+  align-items: ${({ alignItems }) =>
+    alignItems && `align-items: ${alignItems}`};
+  margin: ${({ margin }) => margin && `margin: ${margin}`};
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 1200px;
