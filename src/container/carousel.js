@@ -1,8 +1,8 @@
-﻿import React, { useContext } from "react";
+﻿import React from "react";
 import Carousel from "react-elastic-carousel";
 import { Card } from "../components";
 import { ImageContainer } from "../components/cards/styles/cards";
-import { ProductContext } from "../context/context";
+import { useProducts } from "../context/context";
 
 // this is to set the breakPoints for the carousel so as to make it responsive
 const breakPoints = [
@@ -14,7 +14,7 @@ const breakPoints = [
 
 export function CarouselContainer() {
   // I imported thedata fetched by using context API for state management
-  const { data, error } = useContext(ProductContext);
+  const { data, error } = useProducts();
 
   if (error) return <span>error</span>;
   if (!data) return <span>loading...</span>;

@@ -8,23 +8,26 @@ import {
   ImageContainer,
 } from "./styles/cards";
 
-export default function Card({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+export default function Card({ children }) {
+  return <Container>{children}</Container>;
 }
 
-Card.Title = function CardTitle({ children, ...restProps }) {
-  return <Title {...restProps}>{children}</Title>;
+Card.Title = function CardTitle({ title }) {
+  return <Title>{title}</Title>;
 };
-Card.Image = function CardImage({ ...restProps }) {
-  return <Image {...restProps} />;
+
+Card.Image = function CardImage({ image }) {
+  return (
+    <ImageContainer>
+      <Image src={image} alt={`card-${image}`} />
+    </ImageContainer>
+  );
 };
-Card.Description = function CardDescription({ children, ...restProps }) {
-  return <Description {...restProps}>{children}</Description>;
+
+Card.Description = function CardDescription({ children }) {
+  return <Description>{children}</Description>;
 };
 
 Card.Group = function CardGroup({ children, ...restProps }) {
   return <Group {...restProps}>{children}</Group>;
-};
-Card.ImageContainer = function CardImageContainer({ children, ...restProps }) {
-  return <ImageContainer {...restProps}>{children}</ImageContainer>;
 };

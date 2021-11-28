@@ -1,10 +1,10 @@
-﻿import React, { useContext } from "react";
+﻿import React from "react";
 import { Card } from "../components";
 import { ImageContainer } from "../components/cards/styles/cards";
-import { ProductContext } from "../context/context";
+import { useProducts } from "../context/context";
 
 export function CategoriesContainer() {
-  const { data, error } = useContext(ProductContext);
+  const { data, error } = useProducts();
 
   if (error) return <span>error</span>;
   if (!data) return <span>loading...</span>;

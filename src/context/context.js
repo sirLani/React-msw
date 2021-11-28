@@ -1,18 +1,27 @@
-﻿import { createContext } from "react";
-import useSWR from "swr";
+﻿import useSWR from "swr";
 
-const ProductContext = createContext();
+// const ProductContext = createContext();
 
 function getData() {
   return fetch("/wines").then((response) => response.json());
 }
-function DataContext(props) {
+// function DataContext(props) {
+//   const result = useSWR("wines", getData);
+//   return (
+//     <ProductContext.Provider value={{ ...result }}>
+//       {props.children}
+//     </ProductContext.Provider>
+//   );
+// }
+
+function useProducts() {
   const { data, error } = useSWR("wines", getData);
-  return (
-    <ProductContext.Provider value={{ data, error }}>
-      {props.children}
-    </ProductContext.Provider>
-  );
+
+  return {
+    user: data,
+    isLoading: !error && !data,
+    isError: error,
+  };
 }
 
-export { DataContext, ProductContext };
+export { useProducts };
